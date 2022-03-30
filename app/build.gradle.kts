@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -56,4 +57,7 @@ dependencies {
         testImplementation(androidTest)
     }
 
+    with(Libs.Firebase) {
+        implementation(analytics)
+    }
 }

@@ -49,4 +49,8 @@ object Versions {
         const val glide_compiler = "4.11.0"
     }
 
+    object Firebase {
+        const val gradle = "4.3.10"
+        const val realtimeDB = "20.0.4"
+    }
 }

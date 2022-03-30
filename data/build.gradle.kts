@@ -10,6 +10,12 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":shared"))
 
+    with(Libs.Kotlin) {
+        implementation(kotlin)
+        implementation(coroutine)
+        implementation(coroutineAndroid)
+    }
+
     with(Libs.Android.JetPack) {
         implementation(hilt_android)
         kapt(hilt_compiler)
@@ -27,5 +33,10 @@ dependencies {
         testImplementation(kotlinJUnit)
         testImplementation(coroutineTest)
         testImplementation(androidTest)
+    }
+
+    with(Libs.Firebase) {
+        api(platform(bom))
+        implementation(realtimeDB)
     }
 }

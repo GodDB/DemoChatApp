@@ -48,5 +48,13 @@ object Libs {
         const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.Glide.glide_compiler}"
     }
 
+    object Firebase {
+        const val gradle = "com.google.gms:google-services:${Versions.Firebase.gradle}"
+        const val bom = "com.google.firebase:firebase-bom:29.2.1"
+        const val analytics = "com.google.firebase:firebase-analytics-ktx"
+        const val realtimeDB = "com.google.firebase:firebase-database-ktx"
+
+    }
+
     const val inject = "javax.inject:javax.inject:1"
 }
