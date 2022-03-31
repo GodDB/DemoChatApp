@@ -58,6 +58,7 @@ dependencies {
     }
 
     with(Libs.Firebase) {
+        implementation(platform(bom))
         implementation(analytics)
     }
 }

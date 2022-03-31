@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+import java.io.FileInputStream
+import java.util.*
 
 plugins {
     id("com.android.library")
@@ -7,9 +9,17 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
+
 android {
     buildFeatures {
         dataBinding = true
+    }
+
+    defaultConfig {
+        val localPropertiesFile = rootProject.file("local.properties")
+        val apikeyProperties = Properties()
+        apikeyProperties.load(FileInputStream(localPropertiesFile))
+        buildConfigField("String", "oauth_web_key", (apikeyProperties["OAUTH_WEB_KEY"] as? String) ?: "Insert your Api Key")
     }
 }
 
@@ -49,5 +59,11 @@ dependencies {
         testImplementation(kotlinJUnit)
         testImplementation(coroutineTest)
         testImplementation(androidTest)
+    }
+
+    with(Libs.Firebase) {
+        implementation(platform(bom))
+        implementation(auth)
+        implementation(playService)
     }
 }

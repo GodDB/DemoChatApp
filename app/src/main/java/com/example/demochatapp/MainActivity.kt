@@ -2,6 +2,7 @@ package com.example.demochatapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.feature.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -9,5 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //TODO navigation component로 변경 필요
+        LoginActivity.start(this)
     }
 }

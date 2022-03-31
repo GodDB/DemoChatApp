@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Chat.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.Chat.Title.Bold" parent="TextAppearance.Chat.Title">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Chat.SubTitle1" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Chat.SubTitle1.Bold" parent="TextAppearance.Chat.SubTitle1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Chat.SubTitle2" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Chat.SubTitle2.Bold" parent="TextAppearance.Chat.SubTitle2">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Chat.Body1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Chat.Body2" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

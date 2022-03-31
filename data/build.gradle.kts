@@ -36,7 +36,7 @@ dependencies {
     }
 
     with(Libs.Firebase) {
-        api(platform(bom))
+        implementation(platform(bom))
         implementation(realtimeDB)
     }
 }
