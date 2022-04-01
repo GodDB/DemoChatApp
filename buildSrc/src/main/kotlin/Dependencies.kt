@@ -52,7 +52,7 @@ object Libs {
         const val gradle = "com.google.gms:google-services:${Versions.Firebase.gradle}"
         const val bom = "com.google.firebase:firebase-bom:29.2.1"
         const val analytics = "com.google.firebase:firebase-analytics-ktx"
-        const val realtimeDB = "com.google.firebase:firebase-database-ktx"
+        const val fireStore = "com.google.firebase:firebase-firestore-ktx"
         const val auth = "com.google.firebase:firebase-auth-ktx"
         const val playService = "com.google.android.gms:play-services-auth:20.1.0"
     }

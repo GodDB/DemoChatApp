@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 @BindingAdapter("adapter")
-internal fun RecyclerView.setAdapter(adapter: RecyclerView.Adapter<*>) {
+internal fun RecyclerView.setAdapter(adapter: RecyclerView.Adapter<*>?) {
     this.adapter = adapter
 }
 
@@ -16,7 +16,7 @@ internal fun RecyclerView.setItemAnimator(itemAnimator: RecyclerView.ItemAnimato
 }
 
 @BindingAdapter("itemDecoration")
-internal fun RecyclerView.addItemDecoration(itemDecoration: RecyclerView.ItemDecoration) {
+internal fun RecyclerView.addItemDecorator(itemDecoration: RecyclerView.ItemDecoration) {
     this.addItemDecoration(itemDecoration)
 }
 

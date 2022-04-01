@@ -1,15 +1,31 @@
 package com.example.demochatapp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.commit
+import com.example.demochatapp.databinding.ActivityMainBinding
+import com.example.feature.base.BaseActivity
+import com.example.feature.ui.chat_list.ChatListFragment
+import com.example.feature.ui.login.AuthUtil
 import com.example.feature.ui.login.LoginActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
-        //TODO navigation component로 변경 필요
-        LoginActivity.start(this)
+    private val loginActivityLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            showChatList()
+        }
+    }
+
+    override fun setup() {
+        if (AuthUtil.isSignIn()) showChatList()
+        else loginActivityLauncher.launch(LoginActivity.getIntent(this))
+    }
+
+    private fun showChatList() {
+        supportFragmentManager.commit {
+            replace(binding.flFragmentContainer.id, ChatListFragment.newInstance())
+        }
     }
 }

@@ -42,7 +42,7 @@ abstract class BaseFragment<out T : ViewDataBinding>(
 
     protected inline fun initBinding(initBlock: T.() -> Unit) = initBlock(binding)
     protected abstract fun setup()
-    protected abstract fun observeViewModel()
+    protected open fun observeViewModel() { }
 
     interface ParamFactory<T> {
         fun newInstance(param : T) : BaseFragment<*>
